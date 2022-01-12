@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Examples.Charge.Application.Messages.Request
 {
-    public class ExampleRequest
+    public class PersonPhoneRequest
     {
-        public string PhoneNumber { get; set; }
+        public string Nome { get; set; }
     }
 }
