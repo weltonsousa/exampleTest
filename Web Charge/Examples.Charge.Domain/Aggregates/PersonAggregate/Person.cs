@@ -1,8 +1,7 @@
-﻿using Abp.Domain.Entities;
-using Abp.Events.Bus;
+﻿using Abp.Events.Bus;
+using Examples.Charge.Domain.Aggregates.ExampleAggregate;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Examples.Charge.Domain.Aggregates.PersonAggregate
 {

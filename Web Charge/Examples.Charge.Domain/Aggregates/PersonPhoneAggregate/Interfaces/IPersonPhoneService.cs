@@ -5,8 +5,12 @@ using System.Threading.Tasks;
 
 namespace Examples.Charge.Domain.Aggregates.ExampleAggregate.Interfaces
 {
-    public interface IExampleService
+    public interface IPersonPhoneService
     {
         Task<List<PersonPhone>> FindAllAsync();
+        Task Add();
+        Task Delete(int? id);
+        Task GetEntityById(int? id);
+        Task Update(int? id);
     }
 }

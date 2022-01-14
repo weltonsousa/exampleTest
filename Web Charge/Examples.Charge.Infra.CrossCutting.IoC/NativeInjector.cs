@@ -25,8 +25,8 @@ namespace Examples.Charge.Infra.CrossCutting.IoC
             services.AddTransient<ExampleDto>();
 
             services.AddScoped<IExampleFacade, ExampleFacade>();
-            services.AddScoped<IExampleService, ExampleService>();
-            services.AddScoped<IExampleRepository, ExampleRepository>();
+            services.AddScoped<IPersonPhoneService, PersonPhoneService>();
+            services.AddScoped<IPersonPhoneRepository, ExampleRepository>();
 
             services.AddScoped<IPersonFacade, PersonFacade>();
             services.AddScoped<IPersonService, PersonService>();

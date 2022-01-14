@@ -8,7 +8,7 @@ namespace Examples.Charge.Application.AutoMapper
     {
         public ExampleProfile()
         {
-            CreateMap<Example, ExampleDto>()
+            CreateMap<PersonPhone, ExampleDto>()
                .ReverseMap()
                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                .ForMember(dest => dest.Nome, opt => opt.MapFrom(src => src.Nome));

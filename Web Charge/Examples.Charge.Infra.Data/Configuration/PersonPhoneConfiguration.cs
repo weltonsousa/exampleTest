@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Examples.Charge.Domain.Aggregates.PersonAggregate;
+using Examples.Charge.Domain.Aggregates.ExampleAggregate;
 
 namespace Examples.Charge.Infra.Data.Configuration
 {

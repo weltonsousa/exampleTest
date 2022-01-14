@@ -19,7 +19,7 @@ namespace Examples.Charge.Infra.Data.Context
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(ExampleContext)));
         }
 
-        public DbSet<Example> Example { get; set; }
+        public DbSet<PersonPhone> Example { get; set; }
         public DbSet<Person> Person { get; set; }
         public DbSet<PersonPhone> PersonPhone { get; set; }
         public DbSet<PhoneNumberType> PhoneNumberType { get; set; }

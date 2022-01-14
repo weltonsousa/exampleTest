@@ -11,10 +11,10 @@ namespace Examples.Charge.Application.Facade
 {
     public class ExampleFacade : IExampleFacade
     {
-        private IExampleService _exampleService;
+        private IPersonPhoneService _exampleService;
         private IMapper _mapper;
 
-        public ExampleFacade(IExampleService exampleService, IMapper mapper)
+        public ExampleFacade(IPersonPhoneService exampleService, IMapper mapper)
         {
             _exampleService = exampleService;
             _mapper = mapper;
