@@ -7,6 +7,6 @@ namespace Examples.Charge.Domain.Aggregates.ExampleAggregate.Interfaces
 {
     public interface IExampleService
     {
-        Task<List<PersonPhone>> FindAllAsync();
+        Task<List<Example>> FindAllAsync();
     }
 }

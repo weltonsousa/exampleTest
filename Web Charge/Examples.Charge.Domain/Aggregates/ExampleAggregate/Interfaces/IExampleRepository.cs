@@ -8,6 +8,6 @@ namespace Examples.Charge.Domain.Aggregates.ExampleAggregate.Interfaces
 {
     public interface IExampleRepository
     {
-        Task<IEnumerable<PersonPhone>> FindAllAsync();
+        Task<IEnumerable<Example>> FindAllAsync();
     }
 }

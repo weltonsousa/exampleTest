@@ -12,10 +12,12 @@ namespace Examples.Charge.API.Controllers
     public class ExampleController : BaseController
     {
         private IExampleFacade _facade;
+        private IMapper _mapper;
 
         public ExampleController(IExampleFacade facade, IMapper mapper)
         {
             _facade = facade;
+            _mapper = mapper;
         }
 
         [HttpGet]

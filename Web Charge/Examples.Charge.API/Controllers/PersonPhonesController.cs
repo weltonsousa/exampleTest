@@ -4,7 +4,7 @@ using Examples.Charge.Application.Interfaces;
 using Examples.Charge.Application.Messages.Request;
 using Examples.Charge.Application.Messages.Response;
 using System.Threading.Tasks;
-using System;
+using Examples.Charge.Domain.Aggregates.PersonAggregate;
 
 namespace Examples.Charge.API.Controllers
 {
@@ -13,43 +13,46 @@ namespace Examples.Charge.API.Controllers
     public class PersonPhonesController : BaseController
     {
         private IPersonPhoneFacade _facade;
+        private IMapper _mapper;
 
         public PersonPhonesController(IPersonPhoneFacade facade, IMapper mapper)
         {
             _facade = facade;
+            _mapper = mapper;
         }
 
         [HttpGet]
+        [Route("/api/personphones")]
         public async Task<ActionResult<PersonPhoneListResponse>> Get() => Response(await _facade.FindAllAsync());
 
-        [HttpPut]
-        [Route("{id}")]
-        public async Task<IActionResult> Edit(int? id)
+        [HttpGet]
+        [Route("/api/personphones/get/{id}")]
+        public async Task<ActionResult> Get(string name)
         {
-            if (id == null)
+            var personPhone = await _facade.Get(name);
+
+            if (personPhone == null)
             {
-                return Response(400);
+                return NotFound();
             }
 
-             await _facade.Update(id);
-            return Response(200);
+            return Ok(personPhone);
+        }
+
+        [HttpPost]
+        [Route("/api/personphones/create")]
+        public async Task<IActionResult> Create([FromBody] PersonPhone personPhone)
+        {
+            var personPhoneCreate = await _facade.Create(personPhone);
+            return Ok(personPhoneCreate);
         }
 
         [HttpDelete]
-        [Route("{id}")]
-        public async Task<IActionResult> Delete(int? id)
+        [Route("/api/persophones/remove/{id}")]
+        public async Task<IActionResult> Remove(string id)
         {
-            try
-            {
-                await _facade.Delete(id);
-                return Response(200);
-            }
-            catch (Exception)
-            {
-
-            }
-
-            return (null);
+            await _facade.Remove(id);
+            return Ok();
         }
     }
 }

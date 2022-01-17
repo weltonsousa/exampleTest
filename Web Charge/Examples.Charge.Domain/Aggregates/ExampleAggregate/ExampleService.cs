@@ -15,6 +15,6 @@ namespace Examples.Charge.Domain.Aggregates.ExampleAggregate
             _exampleService = exampleService;
         }
 
-        public async Task<List<PersonPhone>> FindAllAsync() => (await _exampleService.FindAllAsync()).ToList();
+        public async Task<List<Example>> FindAllAsync() => (await _exampleService.FindAllAsync()).ToList();
     }
 }

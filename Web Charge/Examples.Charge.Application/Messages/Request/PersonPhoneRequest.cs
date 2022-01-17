@@ -6,6 +6,6 @@ namespace Examples.Charge.Application.Messages.Request
 {
     public class PersonPhoneRequest
     {
-        public string Nome { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }
